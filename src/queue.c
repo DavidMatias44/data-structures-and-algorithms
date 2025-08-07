@@ -64,18 +64,24 @@ int queueTail(Queue q)
 
 void printQueue(Queue q)
 {
-    printf("HEAD -> ");
+    printf("*head -> ");
     if (queueIsEmpty(q)) {
         printf("NULL");
     } else {
-        for (size_t i = 0; i < q.size; i++) {
+        while (q.head != NULL) {
             printf("%d -> ", q.head->data);
             q.head = q.head->next;
-
-            if (i == q.size - 1) {
-                printf("NULL");
-            }
         }
     }
-    printf("\n");
+    printf("NULL\n");
+}
+
+void destroyQueue(Queue** q)
+{
+    while ((*q)->head != NULL) {
+        Node* aux = (*q)->head;
+        (*q)->head = (*q)->head->next;
+    }
+    free(*q);
+    *q = NULL;
 }

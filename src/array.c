@@ -87,4 +87,3 @@ void destroyArray(Array* a)
     free(a);
     a = NULL;
 }
-

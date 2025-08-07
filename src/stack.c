@@ -58,9 +58,20 @@ bool stackIsEmpty(Stack s)
 void printStack(Stack s)
 {
     printf("*top -> ");
-    for (size_t i = 0; i < s.size; i++) {
+    while (s.top != NULL) {
         printf("%d -> ", s.top->data);
         s.top = s.top->next;
     }
     printf("NULL\n");
+}
+
+void destroyStack(Stack** s) 
+{
+    while ((*s)->top != NULL) {
+        Node* aux = (*s)->top;
+        (*s)->top = (*s)->top->next;
+        free(aux);
+    }
+    free(*s);
+    *s = NULL;
 }

@@ -17,5 +17,6 @@ int stackPop(Stack*);
 int stackTop(Stack);
 bool stackIsEmpty(Stack);
 void printStack(Stack);
+void destroyStack(Stack**);
 
 #endif // STACK_H

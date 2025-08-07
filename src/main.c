@@ -5,18 +5,19 @@
 
 int main(void)
 {
-    Queue* q = createQueue();
-    
-    queueInsert(q, 10);
-    printQueue(*q);
-    queueInsert(q, 13);
-    printQueue(*q);
+    Stack* s = createStack();
+    stackPush(s, 12);
+    stackPush(s, 13);
+    stackPush(s, 14);
+    printStack(*s);
+    destroyStack(&s);
 
-    queueDelete(q);
+    Queue* q = createQueue();
+    queueInsert(q, 23);
+    queueInsert(q, 23);
+    queueInsert(q, 23);
     printQueue(*q);
-    queueDelete(q);
-    printQueue(*q);
-    queueDelete(q);
+    destroyQueue(&q);
 
     return 0;
 }

@@ -18,5 +18,6 @@ bool queueIsEmpty(Queue);
 int queueHead(Queue);
 int queueTail(Queue);
 void printQueue(Queue);
+void destroyQueue(Queue**);
 
 #endif // QUEUE_H
