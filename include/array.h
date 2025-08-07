@@ -13,10 +13,10 @@ typedef struct array Array;
 
 Array* createArray(size_t);
 void printArray(Array);
-void push(Array*, int);     // Insert the new element at the beggining of the array.
-int pop(Array*);            // Delete the element at the beggining of the array and return it.
-void insert(Array*, int);   // Insert the new element at the end of the array.
-int delete(Array*);         // Delete the element at the end of the array and return it.
+void push(Array*, int);     // Insert the new element at the end of the array.
+int pop(Array*);            // Delete the element at the end of the array and return it.
+void insert(Array*, int);   // Insert the new element at the beginning of the array.
+int delete(Array*);         // Delete the element at the beginning of the array and return it.
 void destroyArray(Array*);
 
 #endif // ARRAY_H

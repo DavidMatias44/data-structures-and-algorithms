@@ -15,6 +15,9 @@ make
 ## Motivations.
 C was the first programming language that I learned. I took a university course on data structures in my first year, and another on complexity analysis in the second year. Now, as a recent graduated (with a lot of free time), I want to revisit and deeply understand how these structures work internally. This project also helps me sharpen my problem-solving skills.
 
+## Structures.
+- Dynamic array.
+
 ## Future improvements.
 - Add more data structures.
 - Integrate basic testing.
