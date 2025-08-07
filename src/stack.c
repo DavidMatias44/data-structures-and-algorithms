@@ -33,10 +33,13 @@ int stackPop(Stack* s)
         return 0;
     }
 
+    int e = s->top->data;
     Node* temp = s->top;
     s->top = s->top->next;
     free(temp);
     s->size--;
+
+    return e;
 }
 
 int stackTop(Stack s)
