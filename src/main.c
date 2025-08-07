@@ -1,25 +1,22 @@
 #include <stdio.h>
 #include "../include/array.h"
 #include "../include/stack.h"
+#include "../include/queue.h"
 
 int main(void)
 {
-    Stack* s = createStack();
-    printStack(*s);
+    Queue* q = createQueue();
+    
+    queueInsert(q, 10);
+    printQueue(*q);
+    queueInsert(q, 13);
+    printQueue(*q);
 
-    stackPush(s, 69);
-    printStack(*s);
-    printf("top: %d\n", stackTop(*s));
-    stackPush(s, 420);
-    printStack(*s);
-    printf("top: %d\n", stackTop(*s));
-    stackPop(s);
-    printStack(*s);
-    printf("top: %d\n", stackTop(*s));
-    stackPop(s);
-    printStack(*s);
-    // printf("top: %d\n", stackTop(*s));
-    stackPop(s);
+    queueDelete(q);
+    printQueue(*q);
+    queueDelete(q);
+    printQueue(*q);
+    queueDelete(q);
 
     return 0;
 }

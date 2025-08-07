@@ -1,4 +1,5 @@
 #include "../include/stack.h"
+#include "../include/node.h"
 #include <stdlib.h>
 #include <stdbool.h>
 
@@ -12,7 +13,7 @@ Stack* createStack()
 
 void stackPush(Stack* s, int e)
 {
-    Node* n = malloc(sizeof(Node));
+    Node* n = createNode(); 
     n->data = e;
 
     if (stackIsEmpty(*s)) {

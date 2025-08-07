@@ -3,7 +3,7 @@ CFLAGS=-c -g
 OBJDIR=build
 SRCDIR=src
 
-OBJS=$(OBJDIR)/main.o $(OBJDIR)/array.o $(OBJDIR)/stack.o
+OBJS=$(OBJDIR)/main.o $(OBJDIR)/array.o $(OBJDIR)/node.o $(OBJDIR)/stack.o $(OBJDIR)/queue.o
 OUTPUT=output
 
 $(OUTPUT): $(OBJS)
@@ -15,9 +15,15 @@ $(OBJDIR)/main.o: $(SRCDIR)/main.c | $(OBJDIR)
 $(OBJDIR)/array.o: $(SRCDIR)/array.c | $(OBJDIR)
 	$(C) $(CFLAGS) $(SRCDIR)/array.c -o $(OBJDIR)/array.o
 
+$(OBJDIR)/node.o: $(SRCDIR)/node.c | $(OBJDIR)
+	$(C) $(CFLAGS) $(SRCDIR)/node.c -o $(OBJDIR)/node.o
+
 $(OBJDIR)/stack.o: $(SRCDIR)/stack.c | $(OBJDIR)
 	$(C) $(CFLAGS) $(SRCDIR)/stack.c -o $(OBJDIR)/stack.o
-	
+
+$(OBJDIR)/queue.o: $(SRCDIR)/queue.c | $(OBJDIR)
+	$(C) $(CFLAGS) $(SRCDIR)/queue.c -o $(OBJDIR)/queue.o	
+
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
 
