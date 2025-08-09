@@ -2,22 +2,49 @@
 #include "../include/array.h"
 #include "../include/stack.h"
 #include "../include/queue.h"
+#include "../include/linkedList.h"
 
 int main(void)
 {
-    Stack* s = createStack();
-    stackPush(s, 12);
-    stackPush(s, 13);
-    stackPush(s, 14);
-    printStack(*s);
-    destroyStack(&s);
+    List* l = createList();
 
-    Queue* q = createQueue();
-    queueInsert(q, 23);
-    queueInsert(q, 23);
-    queueInsert(q, 23);
-    printQueue(*q);
-    destroyQueue(&q);
+    listInsert(l, 21);
+    printList(*l);
+    listInsert(l, 23);
+    printList(*l);
+    listInsert(l, 25);
+    printList(*l);
+
+    printf("%d\n", listGetAt(*l, 0));
+    printf("%d\n", listGetAt(*l, 1));
+    printf("%d\n", listGetAt(*l, 2));
+
+    listDelete(l);
+    printList(*l);
+    listDelete(l);
+    printList(*l);
+    listDelete(l);
+    printList(*l);
+
+    printf("%d\n", listGetAt(*l, 0));
+    printf("%d\n", listGetAt(*l, 1));
+    printf("%d\n", listGetAt(*l, 2));
+
+    listPush(l, 33);
+    printList(*l);
+    listPop(l);
+    printList(*l);
+    listPush(l, 34);
+    printList(*l);
+    listPush(l, 35);
+    printList(*l);
+    listPush(l, 36);
+    printList(*l);
+    listPop(l);
+    printList(*l);
+
+
+    
 
     return 0;
 }
